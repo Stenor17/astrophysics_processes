@@ -1,0 +1,139 @@
+\documentclass[11pt, a4paper, oneside]{scrreprt}
+
+% --- LINGUA E CODIFICA ---
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[margin=2.5cm]{geometry}
+
+% --- PACCHETTI MATEMATICI E FISICI ---
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{physics2}
+\usepackage{siunitx}
+\usepackage{microtype} % Migliora la spaziatura tipografica
+
+% --- GRAFICA E BOX ---
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+
+% --- NAVIGABILITÀ E HYPERREF ---
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!70!black,
+    citecolor=green!50!black,
+    urlcolor=magenta
+}
+
+% --- STILI PERSONALIZZATI PER BOX ---
+\newtcolorbox{formulaBox}[1]{
+    colback=blue!5!white,
+    colframe=blue!75!black,
+    fonttitle=\bfseries,
+    title=#1,
+    arc=2mm
+}
+
+\newtcolorbox{notaBox}[1]{
+    colback=orange!5!white,
+    colframe=orange!85!black,
+    fonttitle=\bfseries,
+    title=#1,
+    arc=2mm
+}
+
+% --- INFORMAZIONI DOCUMENTO ---
+\title{
+    \Huge \textbf{Processi Astrofisici} \\
+    \large Appunti del Corso --- Università di Pisa
+}
+\author{\textbf{Stefano Nordio}}
+\date{Anno Accademico 2026/2027}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\chapter{Prefazione}
+Questi sono i miei appunti riscritti in maniera sensata e leggibile per il corso di Astrophysical Processes
+dell'Università di Pisa, tenuto dai professori Crisostomi e Pallottini nell'anno del Signore 2026.
+Il corso appare ampio e un po' frammentato, per questo ho ritenuto che fosse utile scrivere
+in maniera compatta e organizzata questi appunti, nel modo più coerente a me possibile. Ovviamente le informazioni
+riportate potrebbero contenere errori, che vi invito a segnalare alla mia e-mail Unipi.
+Il corso è tenuto in inglese, motivo per cui ho scelto di redigere gli appunti in italiano.
+
+% --- CAPITOLO 1 ---
+\chapter{L'equazione del trasporto di Boltzmann}
+Questo corso si può riassumere con l'equazione del trasporto di Boltzmann.
+
+\begin{formulaBox}{Equazione del Trasporto di Boltzmann (BTE)}
+\begin{equation}
+    \frac{df}{dt} = \left. \frac{\partial f}{\partial t} \right|_{\text{coll}}
+\end{equation}
+dove $f$ è la funzione di distribuzione del sistema di cui vogliamo studiare il comportamento.
+\end{formulaBox}
+
+Sul membro di destra di quest'equazione ci soffermeremo a lungo in più occasioni nel seguito.
+Il membro di sinistra della BTE (\textit{Boltzmann Transport Equation}) è la derivata totale rispetto al tempo della funzione di
+distribuzione $f(t, \vec{x}, \vec{p})$, la quale dipende dal tempo $t$, dalla posizione $\vec{x}$ e dall'impulso $\vec{p}$.
+Essa rappresenta la densità numerica di particelle $N$ nello spazio delle fasi a un determinato istante $t$.
+Potrebbe trattarsi, ad esempio, di fotoni, gas, plasma o materia oscura, e ci permette di ottenere una descrizione statistica completa del sistema.
+
+\begin{equation} \label{eq:densità_spazio_fasi}
+    f = \frac{d^6N}{dV_x \, dV_p} = \frac{d^6N}{dx \, dy \, dz \, dp_x \, dp_y \, dp_z}
+\end{equation}
+
+Proviamo a scrivere il termine di sinistra per una generica funzione $f(t, \vec{x}, \vec{p})$ applicando
+la regola di derivazione a catena.
+
+\begin{equation} \label{eq:derivazione_a_catena}
+    \frac{df}{dt} = \frac{\partial f}{\partial t} + \dot{\vec{x}} \cdot \vec{\nabla}_{x}f + \dot{\vec{p}} \cdot \vec{\nabla}_{p}f
+\end{equation}
+
+Analizziamo i vari termini ottenuti: $\dot{\vec{x}}$ è chiaramente una velocità mentre $\dot{\vec{p}}$ è una generica forza agente sulla nostra particella.
+Siccome la funzione di distribuzione vive nello spazio delle fasi, mi piacerebbe conneterla all'Hamiltoniana del sistema.
+Definiamo quindi il vettore $\vec{z}$ nel seguente modo:
+\begin{equation}
+    \vec{z} = (\vec{x}, \vec{p}) = (x, y, z, p_x , p_y , p_z)
+\end{equation}
+
+Allora possiamo riscrivere l'equazion \eqref{eq:derivazione_a_catena} nel seguente modo:
+
+\begin{equation}
+    \frac{df}{dt} = \frac{\partial f}{\partial t} + \dot{\vec{z}} \cdot \vec{\nabla}_{x}f
+\end{equation}
+
+
+
+
+
+%\section{Definizioni Fondamentali}
+%L'intensità specifica $I_\nu$ descrive il flusso di energia radiativa per unità di area, angolo solido, tempo e frequenza:
+%\begin{equation}
+    %dE = I_\nu \, dA \, \cos\theta \, d\Omega \, dt \, d\nu
+%\end{equation}
+
+%\begin{formulaBox}{Equazione del Trasporto Radiativo}
+%L'equazione fondamentale che descrive la variazione dell'intensità lungo il cammino ottico $ds$ è:
+%\begin{equation}
+    %\frac{dI_\nu}{ds} = -\alpha_\nu I_\nu + j_\nu
+%\end{equation}
+%dove $\alpha_\nu$ è il coefficiente di assorbimento e $j_\nu$ è l'emissività del mezzo.
+%\end{formulaBox}
+
+%\section{Spessore Ottico e Funzione Sorgente}
+%Introducendo lo spessore ottico $d\tau_\nu = \alpha_\nu ds$ e la funzione sorgente $S_\nu \equiv \frac{j_\nu}{\alpha_\nu}$, l'equazione assume la forma canonica:
+%\begin{equation}
+    %\frac{dI_\nu}{d\tau_\nu} = -I_\nu + S_\nu
+%\end{equation}
+
+%\begin{notaBox}{Equilibrio Termodinamico Locale (LTE)}
+%In condizioni di LTE, la funzione sorgente coincide con la funzione di distribuzione di Planck: $S_\nu = B_\nu(T)$.
+%\end{notaBox}
+
+%\chapter{Processi di Radiazione Continuo}
+%\section{Radiazione di Bremsstrahlung}
+
+\end{document}
