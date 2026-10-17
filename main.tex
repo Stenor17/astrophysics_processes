@@ -75,7 +75,7 @@ Questo corso si può riassumere con l'equazione del trasporto di Boltzmann.
 dove $f$ è la funzione di distribuzione del sistema di cui vogliamo studiare il comportamento.
 \end{formulaBox}
 
-Sul membro di destra di quest'equazione ci soffermeremo a lungo in più occasioni nel seguito.
+Sul membro di destra di quest'equazione, detto termine collisionale, ci soffermeremo a lungo in più occasioni nel seguito.
 Il membro di sinistra della BTE (\textit{Boltzmann Transport Equation}) è la derivata totale rispetto al tempo della funzione di
 distribuzione $f(t, \vec{x}, \vec{p})$, la quale dipende dal tempo $t$, dalla posizione $\vec{x}$ e dall'impulso $\vec{p}$.
 Essa rappresenta la densità numerica di particelle $N$ nello spazio delle fasi a un determinato istante $t$.
@@ -131,7 +131,26 @@ Otteniamo:
     \vec{\nabla}_{z} \cdot \dot{\vec{z}} = \vec{\nabla}_{x} \cdot \vec{\nabla}_{p}H - \vec{\nabla}_{p} \cdot \vec{\nabla}_{x}H = (\vec{\nabla}_{x} \cdot \vec{\nabla}_{p} - \vec{\nabla}_{p} \cdot \vec{\nabla}_{x})H
 \end{equation}
 
-Se l'Hamiltoniana è sufficientemente regolare (grazie al teorema di Schwarz sulla commutatività delle derivate miste), si ottiene $\vec{\nabla}_{z} \cdot \dot{\vec{z}} = 0$, che esprime l'incomprimibilità del flusso nello spazio delle fasi (Teorema di Liouville).
+Se l'Hamiltoniana è sufficientemente regolare, si ottiene $\vec{\nabla}_{z} \cdot \dot{\vec{z}} = 0$, che esprime l'incomprimibilità del flusso nello spazio delle fasi.
+
+Se poniamo solo per un momento $\left. \frac{\partial f}{\partial t} \right|_{\text{coll}} = 0$, otteniamo l'equazione di Vlasov.
+\begin{equation} \label{eq:Vlasov}
+    \frac{df}{dt} = \frac{\partial f}{\partial t} + \vec{\nabla}_{z} \cdot (\dot{\vec{z}}f) = 0
+\end{equation}
+
+L'equazione \eqref{eq:Vlasov} rappresenta la conservazione della densità di particelle lungo le traiettorie nello spazio delle fasi,
+in accordo con il Teorema di Liouville, affrontato nel corso di Meccanica Classica.
+
+Soffermiamoci un attimo a riflettere su cosa comportino le varie componenti della BTE:
+\begin{itemize}
+    \item Se il flusso nello spazio delle fasi non fosse incomprimibile ($\vec{\nabla}_{z} \cdot \dot{\vec{z}} \neq 0$), significherebbe che sul sistema agiscono forze non-conservative o dissipative (ad esempio forze d'attrito dipendenti dalla velocità).
+    \item Se invece la derivata totale non è nulla ($\frac{df}{dt} \neq 0$), significa che il termine collisionale $\left. \frac{\partial f}{\partial t} \right|_{\text{coll}}$ è non nullo a sua volta. In questo caso, processi fisici esterni stanno immettendo o rimuovendo particelle da quel volume infinitesimo dello spazio delle fasi.
+    Per esempio, se $f$ rappresenta la funzione di distribuzione dei fotoni di un fascio di luce e questi incontrano un atomo di idrogeno, l'eventuale assorbimento di un fotone da parte dell'atomo verrà descritto proprio all'interno del termine collisionale.
+\end{itemize}
+
+\section{Invarianza della BTE}
+Prima di iniziare utilizzare l'equazione del trasporto, dobbiamo verificare che sia invariante rispetto al
+sistema di riferimento scelto.
 
 
 %\section{Definizioni Fondamentali}
