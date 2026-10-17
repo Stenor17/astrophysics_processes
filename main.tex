@@ -81,32 +81,57 @@ distribuzione $f(t, \vec{x}, \vec{p})$, la quale dipende dal tempo $t$, dalla po
 Essa rappresenta la densità numerica di particelle $N$ nello spazio delle fasi a un determinato istante $t$.
 Potrebbe trattarsi, ad esempio, di fotoni, gas, plasma o materia oscura, e ci permette di ottenere una descrizione statistica completa del sistema.
 
-\begin{equation} \label{eq:densità_spazio_fasi}
+\begin{equation} \label{eq:densita_spazio_fasi}
     f = \frac{d^6N}{dV_x \, dV_p} = \frac{d^6N}{dx \, dy \, dz \, dp_x \, dp_y \, dp_z}
 \end{equation}
 
 Proviamo a scrivere il termine di sinistra per una generica funzione $f(t, \vec{x}, \vec{p})$ applicando
-la regola di derivazione a catena.
+la regola di derivazione a catena:
 
 \begin{equation} \label{eq:derivazione_a_catena}
     \frac{df}{dt} = \frac{\partial f}{\partial t} + \dot{\vec{x}} \cdot \vec{\nabla}_{x}f + \dot{\vec{p}} \cdot \vec{\nabla}_{p}f
 \end{equation}
 
-Analizziamo i vari termini ottenuti: $\dot{\vec{x}}$ è chiaramente una velocità mentre $\dot{\vec{p}}$ è una generica forza agente sulla nostra particella.
-Siccome la funzione di distribuzione vive nello spazio delle fasi, mi piacerebbe conneterla all'Hamiltoniana del sistema.
+Analizziamo i vari termini ottenuti: $\dot{\vec{x}}$ è chiaramente una velocità, mentre $\dot{\vec{p}}$ è una generica forza agente sulla nostra particella.
+Siccome la funzione di distribuzione vive nello spazio delle fasi, ci interessa connetterla all'Hamiltoniana del sistema.
 Definiamo quindi il vettore $\vec{z}$ nel seguente modo:
 \begin{equation}
-    \vec{z} = (\vec{x}, \vec{p}) = (x, y, z, p_x , p_y , p_z)
+    \vec{z} = (\vec{x}, \vec{p}) = (x, y, z, p_x, p_y, p_z)
 \end{equation}
 
-Allora possiamo riscrivere l'equazion \eqref{eq:derivazione_a_catena} nel seguente modo:
-
+Allora possiamo riscrivere l'equazione \eqref{eq:derivazione_a_catena} nel seguente modo:
 \begin{equation}
-    \frac{df}{dt} = \frac{\partial f}{\partial t} + \dot{\vec{z}} \cdot \vec{\nabla}_{x}f
+    \frac{df}{dt} = \frac{\partial f}{\partial t} + \dot{\vec{z}} \cdot \vec{\nabla}_{z}f
 \end{equation}
 
+Ci farebbe comodo riscrivere il secondo termine sfruttando la divergenza del prodotto $(\dot{\vec{z}} f)$.
+Usando la regola del prodotto per la divergenza:
+\begin{equation}
+    \vec{\nabla}_{z} \cdot (\dot{\vec{z}} f) = \dot{\vec{z}} \cdot \vec{\nabla}_{z}f + f \, (\vec{\nabla}_{z} \cdot \dot{\vec{z}})
+\end{equation}
 
+da cui ricaviamo:
+\begin{equation}
+    \frac{df}{dt} = \frac{\partial f}{\partial t} + \dot{\vec{z}} \cdot \vec{\nabla}_{z}f = \frac{\partial f}{\partial t} + \vec{\nabla}_{z} \cdot (\dot{\vec{z}}f) - f \, (\vec{\nabla}_{z} \cdot \dot{\vec{z}})
+\end{equation}
 
+A questo punto, la divergenza del campo vettoriale nello spazio delle fasi $\vec{\nabla}_{z} \cdot \dot{\vec{z}}$ vale:
+\begin{equation}
+    \vec{\nabla}_{z} \cdot \dot{\vec{z}} = \vec{\nabla}_{x} \cdot \dot{\vec{x}} + \vec{\nabla}_{p} \cdot \dot{\vec{p}}
+\end{equation}
+
+Sfruttando le equazioni di Hamilton:
+\begin{align} \label{eq:proprieta_hamiltoniana}
+    \dot{\vec{x}} &= \vec{\nabla}_{p}H \\
+    \dot{\vec{p}} &= -\vec{\nabla}_{x}H \nonumber
+\end{align}
+
+Otteniamo:
+\begin{equation}
+    \vec{\nabla}_{z} \cdot \dot{\vec{z}} = \vec{\nabla}_{x} \cdot \vec{\nabla}_{p}H - \vec{\nabla}_{p} \cdot \vec{\nabla}_{x}H = (\vec{\nabla}_{x} \cdot \vec{\nabla}_{p} - \vec{\nabla}_{p} \cdot \vec{\nabla}_{x})H
+\end{equation}
+
+Se l'Hamiltoniana è sufficientemente regolare (grazie al teorema di Schwarz sulla commutatività delle derivate miste), si ottiene $\vec{\nabla}_{z} \cdot \dot{\vec{z}} = 0$, che esprime l'incomprimibilità del flusso nello spazio delle fasi (Teorema di Liouville).
 
 
 %\section{Definizioni Fondamentali}

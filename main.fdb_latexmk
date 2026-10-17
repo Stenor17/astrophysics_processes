@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1792173746.05534 "/home/stenor/astrophysics_processes/main.tex" "main.pdf" "main" 1792173747.25184 0
+["pdflatex"] 1792234795.11263 "/home/stenor/astrophysics_processes/main.tex" "main.pdf" "main" 1792234797.3339 0
   "/etc/texmf/web2c/texmf.cnf" 1791277140.40019 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/stenor/astrophysics_processes/main.tex" 1792173745.87552 5195 4d7b17675abc793a68e58ed049bb31ab ""
+  "/home/stenor/astrophysics_processes/main.tex" 1792234794.85318 6759 6dd8bba36edb2a00bbc481a34b912e24 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -214,9 +214,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1769369718 41603 27f93b3067076450172040dcd57ca8b3 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1791277173 5541477 3118940318599480888143717dd32d64 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1791277270 3639155 424bc874709b5e863b22cfde1b207b36 ""
-  "main.aux" 1792173747.19353 1835 23d8c2e2d42bbcb7e911824abab520a3 "pdflatex"
-  "main.tex" 1792173745.87552 5195 4d7b17675abc793a68e58ed049bb31ab ""
-  "main.toc" 1792173747.19453 285 794d5ead8d55885ca57ed1f40b9ec33f "pdflatex"
+  "main.aux" 1792234797.22946 1937 ac6cc6470cfded2c2d974dba3197df95 "pdflatex"
+  "main.tex" 1792234794.85318 6759 6dd8bba36edb2a00bbc481a34b912e24 ""
+  "main.toc" 1792234797.23146 285 794d5ead8d55885ca57ed1f40b9ec33f "pdflatex"
   (generated)
   "main.aux"
   "main.log"
