@@ -1,6 +1,8 @@
 \babel@toc {italian}{}\relax 
 \babel@toc {italian}{}\relax 
 \contentsline {chapter}{\numberline {1}Prefazione}{3}{chapter.1}%
-\contentsline {chapter}{\numberline {2}L'equazione del trasporto di Boltzmann}{4}{chapter.2}%
+\contentsline {chapter}{\numberline {2}L'equazione del Trasporto di Boltzmann}{4}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Invarianza della BTE}{5}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Definizioni Fondamentali}{8}{chapter.3}%
+\contentsline {section}{\numberline {3.1}L'intensità specifica monocromatica}{8}{section.3.1}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
